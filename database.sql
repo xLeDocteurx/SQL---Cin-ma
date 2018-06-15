@@ -18,7 +18,7 @@ CREATE TABLE `films` (
 CREATE TABLE `seances` (
 	`ID_seances` INT NOT NULL AUTO_INCREMENT,
 	`date` INT NOT NULL,
-	`film` TEXT NOT NULL, 
+	`film` INT NOT NULL, 
 	`salle` INT NOT NULL,
 	`places restantes` INT NOT NULL,
 	`format` TEXT NOT NULL,
