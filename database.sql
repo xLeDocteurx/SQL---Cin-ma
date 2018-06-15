@@ -1,23 +1,23 @@
 CREATE TABLE `salles` (
 	`ID_salle` INT NOT NULL AUTO_INCREMENT,
-	`capacite` INT NOT NULL,
+	`capacite` SMALLINT UNSIGNED NOT NULL,
 	`equipement` TEXT NOT NULL,
 	PRIMARY KEY (`ID_salle`)
 );
 
 CREATE TABLE `films` (
 	`ID_film` INT NOT NULL AUTO_INCREMENT,
-	`nom` TEXT NOT NULL,
+	`nom` VARCHAR(50) NOT NULL,
 	`synopsis` TEXT NOT NULL,
 	`duree` TIME NOT NULL,
 	`genre` TEXT NOT NULL,
-	`note` TEXT NOT NULL,
+	`note` VARCHAR(5) NULL,
 	PRIMARY KEY (`ID_film`)
 );
 
 CREATE TABLE `seances` (
 	`ID_seances` INT NOT NULL AUTO_INCREMENT,
-	`date` INT NOT NULL,
+	`date` DATETIME NOT NULL,
 	`film` INT NOT NULL, 
 	`salle` INT NOT NULL,
 	`places restantes` INT NOT NULL,
@@ -27,11 +27,11 @@ CREATE TABLE `seances` (
 
 CREATE TABLE `clients` (
 	`ID_client` INT NOT NULL AUTO_INCREMENT,
-	`nom` TEXT NOT NULL,
-	`prenom` TEXT NOT NULL,
-	`age` INT,
+	`nom` VARCHAR(20) NOT NULL,
+	`prenom` VARCHAR(20) NOT NULL,
+	`age` TINYINT UNSIGNED,
 	`mail` TEXT NOT NULL,
-	`ville` TEXT,
+	`ville` VARCHAR(30),
 	PRIMARY KEY (`ID_client`)
 );
 
@@ -40,7 +40,7 @@ CREATE TABLE `reservations` (
 	`client` INT NOT NULL,
 	`seance` INT NOT NULL,
 	`prix` INT NOT NULL,
-	`quantite` INT NOT NULL,
+	`quantite` SMALLINT UNSIGNED NOT NULL,
 	`categorie` INT NOT NULL,
 	PRIMARY KEY (`ID_reservation`)
 );
