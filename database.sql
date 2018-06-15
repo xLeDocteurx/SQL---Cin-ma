@@ -9,7 +9,7 @@ CREATE TABLE `films` (
 	`ID_film` INT NOT NULL AUTO_INCREMENT,
 	`nom` TEXT NOT NULL,
 	`synopsis` TEXT NOT NULL,
-	`duree` INT NOT NULL,
+	`duree` TIME NOT NULL,
 	`genre` TEXT NOT NULL,
 	`note` TEXT NOT NULL,
 	PRIMARY KEY (`ID_film`)
